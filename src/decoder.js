@@ -17,7 +17,7 @@ function tryDecodeBase64Json(text) {
 
   try {
     return JSON.parse(atob(cleaned));
-  } catch (e) {
+  } catch {
     return null;
   }
 }

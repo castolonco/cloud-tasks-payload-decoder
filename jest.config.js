@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   testEnvironment: 'jsdom',
   testMatch: ['**/tests/**/*.test.js'],
   collectCoverageFrom: ['src/decoder.js', 'src/dom-helpers.js'],
