@@ -23,7 +23,7 @@ Instead of:
 
 ## Installation
 
-1. Clone and open Chrome extensions:
+1. Clone the repo:
    ```bash
    git clone https://github.com/castolonco/cloud-tasks-payload-decoder.git
    ```
