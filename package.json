@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Chrome extension that decodes base64-encoded payloads in the Google Cloud Tasks UI",
   "private": true,
+  "type": "module",
   "engines": {
     "node": ">=20.17.0"
   },
@@ -14,7 +15,9 @@
     "lint:fix": "eslint src tests --fix"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^17.0.0",
     "jest": "^30.0.0",
     "jest-environment-jsdom": "^30.0.0"
   },
