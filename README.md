@@ -2,16 +2,14 @@
 
 A Chrome extension that automatically decodes base64-encoded payloads in the Google Cloud Tasks UI.
 
-## The Problem
+Job processing libraries like [Cloudtasker](https://github.com/keypup-io/cloudtasker) encode payloads as base64 when sending them to Google Cloud Tasks. This extension automatically decodes them and displays syntax-highlighted JSON.
 
-Job processing libraries like [Cloudtasker](https://github.com/keypup-io/cloudtasker) encode payloads as base64 when sending them to Google Cloud Tasks. In the Cloud Tasks UI, you see:
-
+**Before:**
 ```
 eyJ3b3JrZXIiOiJNeVdvcmtlciIsImpvYl9xdWV1ZSI6ImRlZmF1bHQi...
 ```
 
-Instead of:
-
+**After:**
 ```json
 {
   "worker": "MyWorker",
