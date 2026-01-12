@@ -25,7 +25,7 @@ Instead of:
 
 1. Clone and open Chrome extensions:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/cloud-tasks-payload-decoder.git
+   git clone https://github.com/castolonco/cloud-tasks-payload-decoder.git
    ```
 
 2. Go to `chrome://extensions`, enable **Developer mode**
