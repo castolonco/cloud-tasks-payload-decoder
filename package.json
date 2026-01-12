@@ -1,0 +1,33 @@
+{
+  "name": "cloud-tasks-payload-decoder",
+  "version": "1.0.0",
+  "description": "Chrome extension that decodes base64-encoded payloads in the Google Cloud Tasks UI",
+  "private": true,
+  "engines": {
+    "node": ">=20.17.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0"
+  },
+  "keywords": [
+    "chrome-extension",
+    "google-cloud",
+    "cloud-tasks",
+    "cloudtasker",
+    "base64",
+    "decoder"
+  ],
+  "license": "MIT",
+  "volta": {
+    "node": "20.19.6"
+  }
+}

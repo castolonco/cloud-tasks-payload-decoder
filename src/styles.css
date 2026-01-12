@@ -1,0 +1,87 @@
+.cloudtasker-decoder-container {
+  position: relative;
+  width: 100%;
+}
+
+.cloudtasker-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  font-family: 'Google Sans', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a73e8;
+  background-color: transparent;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.cloudtasker-toggle-btn:hover {
+  background-color: #f1f3f4;
+  border-color: #1a73e8;
+}
+
+.cloudtasker-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.cloudtasker-decoded-view,
+.cloudtasker-raw-view {
+  font-family: 'Roboto Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 12px;
+  margin: 0;
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre;
+  color: #202124;
+}
+
+.cloudtasker-raw-view {
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.cloudtasker-key { color: #1a73e8; }
+.cloudtasker-string { color: #188038; }
+.cloudtasker-number { color: #e37400; }
+.cloudtasker-boolean { color: #a142f4; }
+.cloudtasker-null { color: #a142f4; font-style: italic; }
+.cloudtasker-bracket,
+.cloudtasker-brace { color: #5f6368; }
+.cloudtasker-colon { color: #5f6368; }
+
+@media (prefers-color-scheme: dark) {
+  .cloudtasker-toggle-btn {
+    color: #8ab4f8;
+    border-color: #5f6368;
+  }
+
+  .cloudtasker-toggle-btn:hover {
+    background-color: #3c4043;
+    border-color: #8ab4f8;
+  }
+
+  .cloudtasker-decoded-view,
+  .cloudtasker-raw-view {
+    background-color: #292a2d;
+    border-color: #5f6368;
+    color: #e8eaed;
+  }
+
+  .cloudtasker-key { color: #8ab4f8; }
+  .cloudtasker-string { color: #81c995; }
+  .cloudtasker-number { color: #fdd663; }
+  .cloudtasker-boolean,
+  .cloudtasker-null { color: #c58af9; }
+  .cloudtasker-bracket,
+  .cloudtasker-brace,
+  .cloudtasker-colon { color: #9aa0a6; }
+}
