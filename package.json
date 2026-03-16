@@ -19,7 +19,7 @@
     "eslint": "^9.39.2",
     "globals": "^17.0.0",
     "jest": "^30.0.0",
-    "jest-environment-jsdom": "^30.0.0"
+    "jest-environment-jsdom": "^30.3.0"
   },
   "keywords": [
     "chrome-extension",
