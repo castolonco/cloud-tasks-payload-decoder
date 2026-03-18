@@ -3,6 +3,11 @@
 (function() {
   'use strict';
 
+  // Prevent duplicate initialization from both manifest injection and
+  // programmatic injection via background service worker
+  if (window.__cloudTasksDecoderInitialized) return;
+  window.__cloudTasksDecoderInitialized = true;
+
   const PROCESSED_ATTR = 'data-cloudtasker-decoded';
   const { getElementText, findElementToHide } = window.CloudTasksDomHelpers;
 
@@ -100,7 +105,7 @@
       observer._timeout = setTimeout(findAndProcessPayloads, 100);
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
     findAndProcessPayloads();
   }
 
@@ -117,6 +122,6 @@
       lastUrl = location.href;
       setTimeout(findAndProcessPayloads, 500);
     }
-  }).observe(document.body, { childList: true, subtree: true });
+  }).observe(document.documentElement, { childList: true, subtree: true });
 
 })();

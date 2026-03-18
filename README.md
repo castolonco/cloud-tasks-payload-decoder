@@ -1,8 +1,6 @@
 # Cloud Tasks Payload Decoder
 
-A Chrome extension that automatically decodes base64-encoded payloads in the Google Cloud Tasks UI.
-
-Job processing libraries like [Cloudtasker](https://github.com/keypup-io/cloudtasker) encode payloads as base64 when sending them to Google Cloud Tasks. This extension automatically decodes them and displays syntax-highlighted JSON.
+Job processing libraries like [Cloudtasker](https://github.com/keypup-io/cloudtasker) encode Cloud Tasks payloads as base64, making them unreadable in the Cloud Console. This Chrome extension decodes the payloads inline.
 
 **Before:**
 ```
@@ -21,12 +19,14 @@ eyJ3b3JrZXIiOiJNeVdvcmtlciIsImpvYl9xdWV1ZSI6ImRlZmF1bHQi...
 
 ## Installation
 
+This extension is not on the Chrome Web Store. Install it manually:
+
 1. Clone the repo:
    ```bash
    git clone https://github.com/castolonco/cloud-tasks-payload-decoder.git
    ```
 
-2. Go to `chrome://extensions`, enable **Developer mode**
+2. Go to `chrome://extensions` and enable **Developer mode**
 
 3. Click **Load unpacked** and select the cloned directory
 
@@ -39,11 +39,11 @@ eyJ3b3JrZXIiOiJNeVdvcmtlciIsImpvYl9xdWV1ZSI6ImRlZmF1bHQi...
 
 ## Features
 
+- Works with any base64-encoded JSON payload, not just Cloudtasker
 - Automatic base64 JSON decoding
 - Syntax highlighting (keys, strings, numbers, booleans)
-- Toggle between decoded/raw views
+- Toggle between decoded and raw views
 - Dark mode support
-- Works with any base64-encoded JSON, not just Cloudtasker
 
 ## Development
 
@@ -60,13 +60,16 @@ npm run lint          # Check code style
 
 ```
 src/
+├── background.js   # Service worker - injects into existing GCP tabs on install
 ├── content.js      # Content script - detects dialogs, injects decoded view
 ├── decoder.js      # Base64 decoding and JSON syntax highlighting
 ├── dom-helpers.js  # DOM utilities
 └── styles.css      # Styling
 tests/
-├── decoder.test.js
-└── content.test.js
+├── background.test.js
+├── content.test.js
+├── content-script.test.js
+└── decoder.test.js
 ```
 
 ## Contributing

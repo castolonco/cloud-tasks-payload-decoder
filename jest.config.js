@@ -1,7 +1,7 @@
 export default {
   testEnvironment: 'jsdom',
   testMatch: ['**/tests/**/*.test.js'],
-  collectCoverageFrom: ['src/decoder.js', 'src/dom-helpers.js'],
+  collectCoverageFrom: ['src/decoder.js', 'src/dom-helpers.js', 'src/content.js', 'src/background.js'],
   coverageThreshold: {
     global: {
       branches: 80,
