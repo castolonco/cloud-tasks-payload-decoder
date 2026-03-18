@@ -23,7 +23,7 @@ npx jest tests/decoder.test.js
 
 ## Architecture
 
-This is a Chrome Manifest V3 content script extension. No background scripts or service workers.
+This is a Chrome Manifest V3 extension with content scripts and a background service worker.
 
 **Content script loading order** (defined in manifest.json):
 1. `src/decoder.js` - Exports `window.CloudTasksDecoder` with `tryDecodeBase64Json()` and `syntaxHighlight()`
@@ -35,6 +35,10 @@ This is a Chrome Manifest V3 content script extension. No background scripts or 
 - Finds `<textarea>`, `<pre>`, `<code>` elements inside dialogs
 - Attempts base64 decode → JSON parse on content
 - On success, hides original element and injects decoded view with toggle button
+
+**Background service worker** (`src/background.js`):
+- Injects content scripts and CSS into already-open GCP tabs on extension install/update/startup
+- Content scripts in manifest.json only run on new page loads, so this handles existing tabs
 
 **GCP-specific handling:**
 - `dom-helpers.js:findElementToHide()` handles GCP's custom `<cfc-code-editor>` and `<cfc-code-snippet>` wrapper components
