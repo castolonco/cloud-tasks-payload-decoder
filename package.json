@@ -1,6 +1,6 @@
 {
   "name": "cloud-tasks-payload-decoder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chrome extension that decodes base64-encoded payloads in the Google Cloud Tasks UI",
   "private": true,
   "type": "module",

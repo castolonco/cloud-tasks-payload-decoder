@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-03-18
+
+### Fixed
+
+- Payload decoding now works when navigating between pages in the Cloud Console without a full page reload
+
+### Added
+
+- Tests for content script integration (dialog detection, toggle, MutationObserver)
+- Tests for background service worker
+- Updated README with clearer intro and project structure
+
 ## [1.0.0] - 2026-01-12
 
 ### Added
